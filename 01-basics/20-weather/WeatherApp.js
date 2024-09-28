@@ -11,7 +11,7 @@ export default defineComponent({
 
     function timeToDate(time) {
       let timeArray = time.split(':'),
-        dt = new Date();
+          dt = new Date();
 
       dt.setHours(Number(timeArray[0]));
       dt.setMinutes(Number(timeArray[1]));
