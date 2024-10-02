@@ -52,7 +52,7 @@ export default defineComponent({
   template: `
     <div>
       <div class="form-group">
-        <input type="search" aria-label="Search" v-model="search" />
+        <input type="search" aria-label="Search" v-model.trim="search" />
       </div>
       <ul aria-label="Emails">
         <li v-for="email in emailList" :class="{ marked: email.mark }">
