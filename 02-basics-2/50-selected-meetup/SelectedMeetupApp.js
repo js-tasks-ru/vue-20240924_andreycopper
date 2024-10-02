@@ -49,7 +49,7 @@ export default defineComponent({
               type="radio"
               name="meetupId"
               value="1"
-              v-model="meetup.id"
+              v-model.number="meetup.id"
             />
             <label for="meetup-id-1" class="radio-group__label">1</label>
           </div>
@@ -60,7 +60,7 @@ export default defineComponent({
               type="radio"
               name="meetupId"
               value="2"
-              v-model="meetup.id"
+              v-model.number="meetup.id"
             />
             <label for="meetup-id-2" class="radio-group__label">2</label>
           </div>
@@ -71,7 +71,7 @@ export default defineComponent({
               type="radio"
               name="meetupId"
               value="3"
-              v-model="meetup.id"
+              v-model.number="meetup.id"
             />
             <label for="meetup-id-3" class="radio-group__label">3</label>
           </div>
@@ -82,7 +82,7 @@ export default defineComponent({
               type="radio"
               name="meetupId"
               value="4"
-              v-model="meetup.id"
+              v-model.number="meetup.id"
             />
             <label for="meetup-id-4" class="radio-group__label">4</label>
           </div>
@@ -93,7 +93,7 @@ export default defineComponent({
               type="radio"
               name="meetupId"
               value="5"
-              v-model="meetup.id"
+              v-model.number="meetup.id"
             />
             <label for="meetup-id-5" class="radio-group__label">5</label>
           </div>
