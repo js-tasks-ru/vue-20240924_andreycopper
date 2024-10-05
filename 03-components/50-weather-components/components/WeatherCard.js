@@ -1,6 +1,10 @@
 import { defineComponent } from 'vue'
 import WeatherAlert from "./WeatherAlert.js";
 
+function isNight(currentTime, sunrise, sunset) {
+  return currentTime < sunrise || currentTime > sunset;
+}
+
 function getCurrentTemp(temp) {
   return (temp - 273.15).toFixed(1);
 }
@@ -30,12 +34,17 @@ export default defineComponent({
 
   setup() {
     return {
+      isNight,
       getCurrentTemp,
       getCurrentPressure,
     }
   },
 
   template: `
+    <li
+      class="weather-card"
+      :class="{'weather-card--night': isNight(item.current.dt, item.current.sunrise, item.current.sunset)}"
+    >
     <WeatherAlert v-if="item.alert">{{ item.alert.sender_name }}: {{ item.alert.description }}</WeatherAlert>
     <div>
       <h2 class="weather-card__name">
@@ -67,5 +76,6 @@ export default defineComponent({
         <div class="weather-details__item-value">{{ item.current.wind_speed }}</div>
       </div>
     </div>
+    </li>
   `,
 });

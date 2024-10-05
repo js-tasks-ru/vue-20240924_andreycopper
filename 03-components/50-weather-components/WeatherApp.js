@@ -25,7 +25,10 @@ export default defineComponent({
     <div>
       <AppHeader>Погода в Средиземье</AppHeader>
 
-      <WeatherList :list :icons />
+      <WeatherList
+        :list="list"
+        :icons="icons"
+      />
     </div>
   `,
 });
